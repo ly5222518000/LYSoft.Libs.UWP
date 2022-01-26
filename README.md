@@ -49,11 +49,10 @@ public class Class1 : INotifyPropertyChanged {
 
 //调用方式
 var obj = new Class1();
-
 await obj.EditAsync();
-await Common.EditAsync<T>();
-//or
 await obj.EditInNewWindowAsync();
+//or，下面的方法会创建一个新对象然后进行编辑
+await Common.EditAsync<T>();
 await Common.EditInNewWindowAsync<T>();
 ```
 包括大量使用DependencyProperty的Service
