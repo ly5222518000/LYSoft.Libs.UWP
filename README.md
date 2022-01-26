@@ -6,3 +6,10 @@ LYSoft.Libs.UWP 扩展库
 包括配置类和配置接口
 
 包括根据指定类型对象自动生成对象编辑器的功能
+```c
+   await obj.EditAsync();
+   await Common.EditAsync<T>();
+   //or
+   await obj.EditInNewWindowAsync();
+   await Common.EditInNewWindowAsync<T>();
+```
