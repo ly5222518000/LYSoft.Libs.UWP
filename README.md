@@ -48,6 +48,8 @@ public class Class1 : INotifyPropertyChanged {
 }
 
 //调用方式
+var obj = new Class1();
+
 await obj.EditAsync();
 await Common.EditAsync<T>();
 //or
