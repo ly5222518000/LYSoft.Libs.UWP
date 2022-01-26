@@ -6,7 +6,7 @@ public static partial class Common {
     /// <summary>同步执行异步方法，并返回结果
     /// <br />用法1: var result = Extensions.RunSync(AsyncMethod);
     /// <br />用法2: var result = Extensions.RunSync(() => AsyncMethod());
-    /// <br />用法3: var m = AsyncMethod; var result = AsyncMethod.RunSync();</summary>
+    /// <br />用法3: var m = AsyncMethod; var result = m.RunSync();</summary>
     public static TResult RunSync<TResult>(this Func<Task<TResult>> func) {
         var cultureUi = CultureInfo.CurrentUICulture;
         var culture = CultureInfo.CurrentCulture;

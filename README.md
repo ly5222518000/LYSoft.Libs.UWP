@@ -1,7 +1,7 @@
 # LYSoft.Libs.UWP
 LYSoft.Libs.UWP 扩展库
 
-包括文件选择器扩展，对话框扩展，异步方法扩展，窗口扩展等
+##包括文件选择器扩展，对话框扩展，异步方法扩展，窗口扩展等
 ```c
    //异步扩展方法
    var result = Extensions.RunSync(AsyncMethod);
@@ -11,14 +11,14 @@ LYSoft.Libs.UWP 扩展库
    var m = AsyncMethod; 
    var result = m.RunSync();
 ```
-包括配置类和配置接口，目前只有json文件配置类，可以使用加密的配置文件防止篡改
+##包括配置类和配置接口，目前只有json文件配置类，可以使用加密的配置文件防止篡改
 ```c
    var file = ApplicatrionData.Current.LocalFolder.EnsureFile("config.json");
    var config = file.AsProtectedJsonConfigurationFile<T>();
    //or
    var config = file.AsJsonConfigurationFile<T>();
 ```
-包括根据指定类型对象自动生成对象编辑器的功能，仅支持常见基本类型、文件(夹)类型和枚举类型
+##包括根据指定类型对象自动生成对象编辑器的功能，仅支持常见基本类型、文件(夹)类型和枚举类型
 ```c
 //类型声明，需要编辑的属性需要有ObjectEditorPropertyAttribute特性，更多用法详见XML注释
 [ObjectEditorType("编辑个人信息")]
@@ -55,7 +55,7 @@ await obj.EditInNewWindowAsync();
 await Common.EditAsync<T>();
 await Common.EditInNewWindowAsync<T>();
 ```
-包括大量使用DependencyProperty的Service
+##包括大量使用DependencyProperty的Service
 ```c
    <Page 
       ...

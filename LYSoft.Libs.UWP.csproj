@@ -122,7 +122,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Common\WindowViewExtensions.cs" />
-    <Compile Include="Common\ObjectEditorExtensions.cs" />
     <Compile Include="Pages\ObjectEditorPage.cs" />
     <Compile Include="XAMLServices\TextVerifyService.cs" />
     <Compile Include="XAMLServices\WindowViewService.cs" />
