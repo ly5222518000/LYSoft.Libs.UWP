@@ -12,6 +12,7 @@ public static class ZIndexService {
         var z = GetZIndex(element);
         z = z > 32 ? 32 : z < 0 ? 0 : z;
         var offset = value - z;
+        //var a = 123;
         element.Translation += new Vector3(0, 0, offset);
     }
 }
