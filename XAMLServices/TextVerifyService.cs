@@ -1,25 +1,36 @@
-﻿using Microsoft.UI.Xaml.Controls;
+﻿namespace LYSoft.Libs.UWP;
 
-namespace LYSoft.Libs.UWP;
-
+/// <summary>文本验证服务，可用于<see cref="TextBox"/></summary>
 public static class TextVerifyService {
 
     private static List<TextBox> list = new();
 
+    /// <summary>验证失败提示依赖属性</summary>
     public static readonly DependencyProperty FailTipProperty = DependencyProperty.Register("FailTip", typeof(string), typeof(TextVerifyService), new("输入的内容不正确"));
+    /// <summary>设置验证失败提示</summary>
     public static void SetFailTip(TextBox element, string value) => element.SetValue(FailTipProperty, value);
+    /// <summary>获取验证失败提示</summary>
     public static string GetFailTip(TextBox element) => (string)element.GetValue(FailTipProperty);
 
+    /// <summary>验证预设类型依赖属性</summary>
     public static readonly DependencyProperty TypeProperty = DependencyProperty.Register("Type", typeof(TextVerifyType), typeof(TextVerifyService), new(TextVerifyType.None));
+    /// <summary>设置验证预设类型</summary>
     public static void SetType(TextBox element, TextVerifyType value) { element.SetValue(TypeProperty, value); if (!list.Contains(element)) { element.LostFocus += Element_LostFocus; list.Add(element); } }
+    /// <summary>获取验证预设类型</summary>
     public static TextVerifyType GetType(TextBox element) => (TextVerifyType)element.GetValue(TypeProperty);
 
+    /// <summary>验证正则表达式依赖属性</summary>
     public static readonly DependencyProperty RegexProperty = DependencyProperty.Register("Regex", typeof(string), typeof(TextVerifyService), new(null));
+    /// <summary>设置验证正则表达式</summary>
     public static void SetRegex(TextBox element, string value) { element.SetValue(RegexProperty, value); if (!list.Contains(element)) { element.LostFocus += Element_LostFocus; list.Add(element); } }
+    /// <summary>获取验证正则表达式</summary>
     public static string GetRegex(TextBox element) => (string)element.GetValue(RegexProperty);
 
+    /// <summary>验证允许空值依赖属性</summary>
     public static readonly DependencyProperty AllowEmptyProperty = DependencyProperty.Register("AllowEmpty", typeof(bool), typeof(TextVerifyService), new(true));
+    /// <summary>设置验证允许空值</summary>
     public static void SetAllowEmpty(TextBox element, bool value) => element.SetValue(AllowEmptyProperty, value);
+    /// <summary>获取验证允许空值</summary>
     public static bool GetAllowEmpty(TextBox element) => (bool)element.GetValue(AllowEmptyProperty);
 
     private static string GetTypeRegexText(this TextVerifyType type) => typeof(TextVerifyType).GetField(type.ToString()).GetCustomAttributes().OfType<TextVerifyTypeAttribute>().Single().Regex;
