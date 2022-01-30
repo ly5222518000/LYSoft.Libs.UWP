@@ -217,6 +217,7 @@ internal class ObjectEditorPage<T> : Page where T : new() {
     }
 }
 
+/// <summary>对象编辑器属性特性</summary>
 [AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
 public class ObjectEditorPropertyAttribute : Attribute {
     /// <summary>显示的顺序</summary>
@@ -241,9 +242,11 @@ public class ObjectEditorPropertyAttribute : Attribute {
     internal string[] OptionsArray { get => Options?.Split('|', StringSplitOptions.RemoveEmptyEntries) ?? Array.Empty<string>(); }
 }
 
+/// <summary>对象编辑器类型特性</summary>
 [AttributeUsage(AttributeTargets.Class, AllowMultiple = false)]
 public class ObjectEditorTypeAttribute : Attribute {
 
+    /// <summary>对象编辑器标题</summary>
     public ObjectEditorTypeAttribute(string header) {
         Header = header;
     }
@@ -251,6 +254,7 @@ public class ObjectEditorTypeAttribute : Attribute {
     public string Header { get; }
 }
 
+/// <summary>对象编辑器属性显示类型</summary>
 public enum ObjectEditorType {
     /// <summary>默认控件，支持所有类型</summary>
     Default,
@@ -274,6 +278,7 @@ public enum ObjectEditorType {
     Range,
 }
 
+/// <summary>公共静态类，包含静态方法和扩展方法</summary>
 public static partial class Common {
 
     /// <summary>使用<see cref="ContentDialog"/>创建一个指定类型的对象</summary>

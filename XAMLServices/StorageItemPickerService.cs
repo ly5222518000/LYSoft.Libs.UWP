@@ -1,6 +1,4 @@
-﻿using Windows.UI.Xaml.Controls;
-
-namespace LYSoft.Libs.UWP;
+﻿namespace LYSoft.Libs.UWP;
 
 public static class StorageItemPickerService {
     public static readonly DependencyProperty PickerTypeProperty = DependencyProperty.Register("PickerType", typeof(StorageItemPickerType), typeof(StorageItemPickerService), new(StorageItemPickerType.None));
