@@ -34,12 +34,12 @@ public static partial class Common {
         titleBar.ButtonInactiveBackgroundColor = null;
     }
 
-    /// <summary>设置为全屏</summary>
+    /// <summary>设置为全屏模式</summary>
     public static void SetFullScreen() {
         ApplicationView.GetForCurrentView().TryEnterFullScreenMode();
     }
 
-    /// <summary>退出全屏</summary>
+    /// <summary>退出全屏模式</summary>
     public static void ExitFullScreen() {
         ApplicationView.GetForCurrentView().ExitFullScreenMode();
     }
