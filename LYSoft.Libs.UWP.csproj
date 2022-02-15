@@ -124,6 +124,7 @@
   <ItemGroup>
     <Compile Include="Common\WindowViewExtensions.cs" />
     <Compile Include="Pages\ObjectEditorPage.cs" />
+    <Compile Include="XAMLServices\RichEditBoxService.cs" />
     <Compile Include="XAMLServices\TextVerifyService.cs" />
     <Compile Include="XAMLServices\WindowViewService.cs" />
     <Compile Include="XAMLServices\StorageItemPickerService.cs" />
