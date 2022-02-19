@@ -281,7 +281,7 @@ public enum ObjectEditorType {
 /// <summary>公共静态类，包含静态方法和扩展方法</summary>
 public static partial class Common {
 
-    /// <summary>使用<see cref="ContentDialog"/>创建一个指定类型的对象</summary>
+    /// <summary>使用<see cref="ContentDialog"/>创建并编辑一个指定类型的对象</summary>
     public static async Task<T> EditAsync<T>() where T : new() => await EditAsync(new T());
 
     /// <summary>使用<see cref="ContentDialog"/>编辑一个指定类型的对象</summary>
