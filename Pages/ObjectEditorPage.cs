@@ -16,7 +16,7 @@ internal class ObjectEditorPage<T> : Page where T : new() {
         var items = typeof(T)
             .GetProperties()
             .Select(prop => (prop, attr: prop.GetCustomAttribute<ObjectEditorPropertyAttribute>()))
-            .Where(i => i.prop != null)
+            .Where(i => i.attr != null)
             .Where(i => i.prop.CanRead && i.prop.CanWrite)
             .OrderBy(i => i.attr.Index);
 

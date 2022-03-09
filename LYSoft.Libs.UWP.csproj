@@ -122,8 +122,11 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Common\ImageExtensions.cs" />
     <Compile Include="Common\WindowViewExtensions.cs" />
     <Compile Include="Pages\ObjectEditorPage.cs" />
+    <Compile Include="XAMLServices\AutoSuggestBoxService.cs" />
+    <Compile Include="XAMLServices\ImageService.cs" />
     <Compile Include="XAMLServices\RichEditBoxService.cs" />
     <Compile Include="XAMLServices\TextVerifyService.cs" />
     <Compile Include="XAMLServices\WindowViewService.cs" />
