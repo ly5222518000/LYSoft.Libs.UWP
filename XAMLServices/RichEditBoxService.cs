@@ -3,6 +3,7 @@
 public class RichEditBoxService {
 
     public static readonly DependencyProperty RtfFileProperty = DependencyProperty.Register("RtfFile", typeof(string), typeof(RichEditBoxService), new(null));
+
     public static void SetRtfFile(RichEditBox element, string value) { 
         element.SetValue(RtfFileProperty, value);
         if (string.IsNullOrWhiteSpace(value)) { return; }
@@ -16,6 +17,7 @@ public class RichEditBoxService {
             element.Document.LoadFromStream(TextSetOptions.FormatRtf, stream); 
         } catch { }
     }
+    
     public static string GetRtfFile(RichEditBox element) => (string)element.GetValue(RtfFileProperty);
 
 }
